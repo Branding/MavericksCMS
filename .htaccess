@@ -1,0 +1,17 @@
+<ifModule mod_rewrite.c>
+RewriteEngine on
+Options All -Indexes
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^(([^/]+/)*[^.]+)$ /$1.php [L]
+RewriteRule ^ajax/pageon(..*)$ ./ajax/pagination?page=$1 [L]
+RewriteRule ^register/start(..*)$ ./UserRegister.php
+RewriteRule ^account/register(..*)$ ./register.php
+RewriteRule ^account/submit(..*)$ ./login.php
+RewriteRule ^account/forgot(..*)$ ./forgot.php
+
+<FilesMatch "(\.(bak|config|sql|fla|psd|ini|log|sh|inc|swp|dist|txt|json|br|tpl)|~)$">
+ Order allow,deny	
+ Deny from all
+ Satisfy All
+</FilesMatch>
