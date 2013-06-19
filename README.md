@@ -4,7 +4,6 @@
 Está centrado principalmente en la seguridad y en tener un sistema limpio, libre de errores y de vulnerabilidades que puedan ser fatales para cada hotel creado.</br>
 El proyecto esta en constante desarrollo. tiene implementado un sistema totalmente inteligente que se encarga de solucionar problemas de forma automatica.</p>
 
-<center>![Que pasa](http://mejorando.la/static/error/img/404.png)</center>
 <h2>Las caracteristicas son:</h2>
 + Estructura en POO ( Programacion orientada a objetos ) 
 + Nucleó, agent, modulós
@@ -15,7 +14,6 @@ El proyecto esta en constante desarrollo. tiene implementado un sistema totalmen
 + Uso de frameworks para creación de plantillas
 + Uso de JSON para enviar datos asincrónicamente al servidor
 + Uso de librerías para comprimir
-+ 
 + Uso de Memcached y apc
 + Modulós de caché
 + Uso de ternary operators 
