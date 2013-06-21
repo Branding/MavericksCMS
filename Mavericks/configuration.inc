@@ -25,7 +25,7 @@ $Mavericks['CONFIG']['MYSQL_DBASE'] =   "Trynity";
 $Mavericks['CONFIG']['SITENAME']    =   "Mavericks Trynity";
 $Mavericks['CONFIG']['SITEPATH']    =   "Auto"; 
 $Mavericks['CONFIG']['CDN']         =   "http://localhost/static";
-$Mavericks['CONFIG']['HASH_TYPE']   =   "Maverick"; // Normal or Mavericks
+$Mavericks['CONFIG']['HASH_TYPE']   =   "Mavericks"; // Normal or Mavericks
 
 $Mavericks['CONFIG']['TPL_DIR']     =   DOCUMENT_ROOT. 'Mavericks' .SEPARATOR. 'Templates' .SEPARATOR;
 $Mavericks['CONFIG']['TPL_CACHE']   =   DOCUMENT_ROOT. 'Mavericks' .SEPARATOR. 'Templates' .SEPARATOR. 'cache';

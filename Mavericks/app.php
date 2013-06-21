@@ -18,6 +18,7 @@ class Mavericks{
 
 	const Mavericks_version = "Trynity";
 	const Mavericks_build	= "1922";
+	
 	static $Template;
 
 	function __construct()
@@ -81,11 +82,8 @@ class Mavericks{
 				self::$Template->assign('Exceptioname', $error);
 				self::$Template->draw('Internalerror');
 				exit;
-
 			break;
 		}
-
-		session_destroy('Exception');
 	}
 
 	private static function Prepare()
@@ -96,10 +94,10 @@ class Mavericks{
 	  	  exit('Lo sentimos, Mavericks edicion: '. self::Mavericks_version .' no funciona con esta version de PHP, actualizada a 5.4 o superior');
 
 		if (!function_exists('curl_init'))
-      	  self::Exception('fatal', 'Mavericks edicion: '. self::Mavericks_version .' requiere el modulo curl activado');
+      	  self::Exception('fatal', 'Sé requiere el modulo curl activado');
 	  
 		if (!function_exists('json_decode'))
-          self::Exception('fatal', 'Mavericks edicion: '. self::Mavericks_version .' requiere el modulo json activado');
+          self::Exception('fatal', 'Sé requiere el modulo json activado');
 		
 		Require 'Modules/RainTPL.php';
 
@@ -110,6 +108,20 @@ class Mavericks{
 		Define('SHORTNAME', self::LoadconfigwithKey('SITENAME'));
 		
 		self::$Template = new raintpl(); 
+	}
+
+	static function MakeRandom($length = 15)
+	{
+		$data = "";
+		$possible = "0123456789ABCDEFGHIJKLMNOPQRSTWXYZY"; 
+		$i = 0;
+			while ($i < $length) 
+			{ 
+				$char = substr($possible, mt_rand(0, strlen($possible)-1), 1);
+				$data .= $char;
+				$i++;
+			}
+		return $data;
 	}
 
 	static function Hash($keyOne, $keyTwo)
@@ -136,8 +148,7 @@ class Mavericks{
 	{
 		Require 'configuration.inc';
 
-		if(is_string($key))
-			return $Mavericks['CONFIG'][$key];
+		return (is_string($key)) ? $Mavericks['CONFIG'][$key] : self::Exception('fatal', 'Se debe definir un string.');
 	}
 
 

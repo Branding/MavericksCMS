@@ -13,20 +13,11 @@
      * GNU General Public License for more details.
 
    ---------------------------------------------------------------------*/
+   Require '../Init.php';
+header('Content-type: application/json');
 
-Require 'Mavericks/app.php';
-
-Define('MICROTIME',     microtime());
-Define('SEPARATOR',     DIRECTORY_SEPARATOR);
-Define('DOCUMENT_ROOT', dirname(__FILE__).SEPARATOR);
-
-new Mavericks();
-
-Mavericks::$Template->assign('CDN', CDN);
-Mavericks::$Template->assign('SITENAME', SHORTNAME);
-Mavericks::$Template->assign('PATH', PATH);
-
-$Database = new Database(Mavericks::LoadconfigwithKey('MYSQL_HOST'), Mavericks::LoadconfigwithKey('MYSQL_PORT'), 
-                         Mavericks::LoadconfigwithKey('MYSQL_USER'), Mavericks::LoadconfigwithKey('MYSQL_PASS'), 
-                         Mavericks::LoadconfigwithKey('MYSQL_DBASE'));
-$users = new Users();
+if($_POST > 0)
+	$users->LogIN($_POST['username'], $_POST['password']);
+else
+	Header("Location: " .PATH);
+	
