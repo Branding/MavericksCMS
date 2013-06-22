@@ -25,9 +25,10 @@ class Mavericks{
 	{
 		try
 		{
-			self::Prepare();
+			self::InternPrepare();
 			self::GetPATH();
 			self::Loadfiles();
+			self::Systemprepare();
 		}
 
 		catch(Exception $e)
@@ -41,6 +42,7 @@ class Mavericks{
 		Require 'Modules/Helpers.php';
 		Require 'Modules/Database.php';
 		Require 'Modules/Users.php';
+		Require 'Modules/Memory.php';
 	}
 
 	static function GetPATH()
@@ -86,7 +88,7 @@ class Mavericks{
 		}
 	}
 
-	private static function Prepare()
+	private static function InternPrepare()
 	{
 		self::Initsession();
 
@@ -98,14 +100,17 @@ class Mavericks{
 	  
 		if (!function_exists('json_decode'))
           self::Exception('fatal', 'Sé requiere el modulo json activado');
-		
+	}
+
+	private static function Systemprepare()
+	{
 		Require 'Modules/RainTPL.php';
 
 		raintpl::$cache_dir = 	self::LoadconfigwithKey('TPL_CACHE'). SEPARATOR;
 		raintpl::$tpl_dir	=	self::LoadconfigwithKey('TPL_DIR'). self::LoadconfigwithKey('TPL_NAME'). SEPARATOR;
 		
-		Define('CDN', self::LoadconfigwithKey('CDN'));
-		Define('SHORTNAME', self::LoadconfigwithKey('SITENAME'));
+		Define('CDN', self::LoadconfigwithKey('CDN') );
+		Define('SHORTNAME', self::LoadconfigwithKey('SITENAME') );
 		
 		self::$Template = new raintpl(); 
 	}

@@ -1,0 +1,77 @@
+body{
+	background-color: #e3e3db;
+	font-family: 'Ubuntu', Georgia, serif;
+	color: #333;
+	font-size: 14px;
+	margin: 0;
+}
+
+header{
+	width: 100%;
+	height: 95px;
+	background: rgba(0, 0, 0, 0.86);
+	z-index: 20;
+	border-bottom: 5px solid rgb(2, 167, 230);
+	z-index: 5;
+}
+
+header #logo{
+	margin-left: 50px;
+	width: 110px;
+	height: 40px;
+	position: absolute;
+	margin-top:27px;
+}
+
+#wrapper{
+	margin: 0 auto;
+	width: 950px;
+	background: rgba(0, 0, 0, 0.86);
+	padding: 5px;
+	color: white;
+	margin-top:10px;
+	z-index: 5;
+	border-radius: 5px;
+}
+
+#info{
+	width: 300px;
+	position: absolute;
+	padding-left: 3px;
+	height: 237px;
+	border-right: 2px solid white;
+}
+
+#content{
+	width: 630px;
+	padding-left: 3px;
+	margin-left: 310px;
+}
+
+#footer-image{
+	height: 100%;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	display: block;
+	position: absolute;
+	top: 0;
+	z-index: -1;
+}
+
+footer{
+	width: 100%;
+	height: 45px;
+	border-top: 5px solid rgb(2, 167, 230);
+	background: black;
+	position: absolute;
+	text-transform: uppercase;
+	bottom: 0;
+}
+
+footer #copyright{
+	color: white;
+	font-size: 16px;
+	margin-top: 10px;
+	text-align: center;
+}

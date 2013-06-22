@@ -30,3 +30,5 @@ $Mavericks['CONFIG']['HASH_TYPE']   =   "Mavericks"; // Normal or Mavericks
 $Mavericks['CONFIG']['TPL_DIR']     =   DOCUMENT_ROOT. 'Mavericks' .SEPARATOR. 'Templates' .SEPARATOR;
 $Mavericks['CONFIG']['TPL_CACHE']   =   DOCUMENT_ROOT. 'Mavericks' .SEPARATOR. 'Templates' .SEPARATOR. 'cache';
 $Mavericks['CONFIG']['TPL_NAME']    =   "Trynity";
+
+$Mavericks['CONFIG']['APC_CACHE']   =   false;
