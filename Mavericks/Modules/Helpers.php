@@ -14,7 +14,6 @@
 
    ---------------------------------------------------------------------*/
 class Helpers{
-    
     static function WriteInLogs($text)
     {
         $Handler = fopen(DOCUMENT_ROOT. 'Mavericks'. SEPARATOR . 'Logs' . SEPARATOR. 'error.log', "a");

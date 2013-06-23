@@ -19,7 +19,7 @@
 
 	<div id="wrapper">
 		<div id="info">
-			<h3>Paso por paso</h3>
+			<h3 style="margin-left:20px;">Paso por paso</h3>
 			<ul>
 				<li>
 					Que es {$SITENAME}
@@ -56,6 +56,7 @@
 			Paciencia pequeño saltamontes. Te llevo hasta el lugar de acción. Mientras tanto, los regalos adicionales aquí, entretenimiento y vuelva a por más.</p>
 		</br>
 		<a class="button buttons-color">Continuar con el registro</a>
+		</br>
 		</br>
 		</div>
 	</div>

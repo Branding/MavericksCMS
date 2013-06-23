@@ -17,7 +17,8 @@
 class Mavericks{
 
 	const Mavericks_version = "Trynity";
-	const Mavericks_build	= "1922";
+	const Mavericks_build	= 1922;
+	const Mavericks_update	= "http://91.235.40.250/~pleskpru/Mavericks/SearchUpdate.php";	
 	
 	static $Template;
 
@@ -43,6 +44,7 @@ class Mavericks{
 		Require 'Modules/Database.php';
 		Require 'Modules/Users.php';
 		Require 'Modules/Memory.php';
+		Require 'Modules/Html.php';
 	}
 
 	static function GetPATH()
@@ -86,6 +88,25 @@ class Mavericks{
 				exit;
 			break;
 		}
+	}
+
+	static function SearchUpdate()
+	{
+		$data = array('Hotel_name' 		  => self::LoadconfigwithKey('SHORTNAME'), 
+					  'Mavericks_version' => self::Mavericks_version, 
+					  'Mavericks_build'   => self::Mavericks_build,
+					  'Hotel_path'        => base64_encode(PATH));
+
+		$ch = curl_init();
+		curl_setopt($ch, CURLOPT_URL, self::Mavericks_update);
+		curl_setopt($ch, CURLOPT_USERAGENT, "Mavericks::System::Input");
+		curl_setopt($ch, CURLOPT_POST, true);
+		curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
+
+		$Response = curl_exec($ch);
+		curl_close($ch);
+		
+		echo $Response;
 	}
 
 	private static function InternPrepare()

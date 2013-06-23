@@ -16,7 +16,7 @@ $(document).on('ready')
 				else
 				{
 					$('#result').css('background', 'rgb(82, 211, 41)');
-					$('#result').html('Bienvenid@ haz iniciado sesion correctamente, seras redirecionado en segundos...');
+					$('#result').html('Bienvenid@ '+ resp.username +' haz iniciado sesion correctamente, seras redirecionado en segundos...');
 					setTimeout(function(){
 						console.log('Estado: Logeado con exito..');
 					}, 3200);

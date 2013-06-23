@@ -15,4 +15,8 @@
    ---------------------------------------------------------------------*/
 
 Require 'Init.php';
-Mavericks::$Template->draw('register');
+
+if($users->CheckLogin())
+    header("Location: ".PATH."/me");
+
+new Html(Mavericks::$Template->draw('register'));

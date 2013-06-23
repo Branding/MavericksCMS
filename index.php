@@ -15,4 +15,8 @@
    ---------------------------------------------------------------------*/
 
 Require 'Init.php';
-Mavericks::$Template->draw('index');
+
+if($users->CheckLogin())
+    header("Location: ".PATH."/me");
+
+new Html(Mavericks::$Template->draw('index'));

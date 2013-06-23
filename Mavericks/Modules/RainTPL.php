@@ -157,7 +157,7 @@ class RainTPL{
 	 * @return string
 	 */
 
-	function draw( $tpl_name, $return_string = false ){
+	function draw( $tpl_name, $return_string = true ){
 
 		try {
 			// compile the template if necessary and set the template filepath

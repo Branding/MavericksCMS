@@ -45,10 +45,17 @@ class Users
 		else
 		{
 			$this->status['status']	  =  "OK";
+			$this->status['username'] = $username;
 			$_SESSION['username']	  =	$username;
 			$_SESSION['Tocken_login'] = Mavericks::MakeRandom(19);
 			echo json_encode($this->status); 
 		}
+	}
+
+	public function CheckLogin()
+	{
+		if(isset($_SESSION['username']) && isset($_SESSION['Tocken_login']) )
+			return true;
 	}
 
 	private function UserValidate($username, $password)
