@@ -92,7 +92,7 @@ class Mavericks{
 
 	static function SearchUpdate()
 	{
-		$data = array('Hotel_name' 		  => self::LoadconfigwithKey('SHORTNAME'), 
+		$data = array('Hotel_name'		  => self::LoadconfigwithKey('SHORTNAME'), 
 					  'Mavericks_version' => self::Mavericks_version, 
 					  'Mavericks_build'   => self::Mavericks_build,
 					  'Hotel_path'        => base64_encode(PATH));
