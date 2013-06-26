@@ -52,6 +52,16 @@ class Users
 		}
 	}
 
+	public function _NewUser($username, $password, $password2, $email, $Question1, $Answer1, $Question2, $Answer2, $Recode, $Recresp)
+	{
+		if(empty($username) || empty($password) || empty($password2) || empty($email) || empty($Answer1) || empty($Answer2))
+		{
+			$this->status['status']		=	"NOK";
+			$this->status['error']		=	"Debes rellenar todos los campos para continuar";
+			echo json_encode($this->status);
+		}
+	}
+
 	public function CheckLogin()
 	{
 		if(isset($_SESSION['username']) && isset($_SESSION['Tocken_login']) )

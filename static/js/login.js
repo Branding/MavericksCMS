@@ -1,3 +1,9 @@
+/*-----------------------------
+	(•_•) Author: |Lion
+	<) )╯ Copyright (C) 2013 - 2014
+ 	 / \  MavericksCMS
+-------------------------------------*/
+
 $(document).on('ready')
 {
 	window.Initlogin = function()
@@ -8,15 +14,17 @@ $(document).on('ready')
 			data: { username: $('#username').val(), password:$('#password').val() },
 			success: function(resp){
 				console.log("Informacion recibida: " + resp)
+				$('#result').css('display','block');
 				if(resp.status == "NOK")
 				{
-					$('#result').css('display','block');
 					$('#result').html(resp.error);
 				}
 				else
 				{
+					$('#forms').css('display', 'none');
 					$('#result').css('background', 'rgb(82, 211, 41)');
 					$('#result').html('Bienvenid@ '+ resp.username +' haz iniciado sesion correctamente, seras redirecionado en segundos...');
+					
 					setTimeout(function(){
 						console.log('Estado: Logeado con exito..');
 					}, 3200);

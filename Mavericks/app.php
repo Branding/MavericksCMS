@@ -80,11 +80,10 @@ class Mavericks{
 
 			case "fatal":
 				$error .= " Mavericks edicion: ".self::Mavericks_version;
-				Header("Exception type fatal: ". $error);
 				Helpers::WriteInLogs('['. date('d/m/Y: h:i:s') .'] Fatal error: '. $error . PHP_EOL);
 
 				self::$Template->assign('Exceptioname', $error);
-				self::$Template->draw('Internalerror');
+				new Html(self::$Template->draw('Internalerror'));
 				exit;
 			break;
 		}
@@ -155,7 +154,7 @@ class Mavericks{
 		switch(self::LoadconfigwithKey('HASH_TYPE'))
 		{
 			case "Mavericks":
-				$str = hash('haval256,5', md5($keyOne. strtolower($keyTwo)) );
+				$str = hash('haval256,5', md5($keyOne. strtolower($keyTwo)).sha1(self::LoadconfigwithKey('HASH_KEY')));
 			break;
 
 			case "Normal":

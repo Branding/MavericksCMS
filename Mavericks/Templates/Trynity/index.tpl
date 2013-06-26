@@ -46,7 +46,7 @@
 
 	<div id="footer-image" style="background:url('{$CDN}/images/index/bg_hotel.out.png') 475px 0 no-repeat;"></div>
 	<footer>
-		<div id="copyright">{$SITENAME} 2013 - 2014 &copy; Todos los derechos reservados</div>
+		<div id="copyright">{$SITENAME} 2013 - 2014 &copy;  Todos los derechos reservados</div>
 	</footer>
 
 	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>

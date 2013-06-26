@@ -15,6 +15,7 @@
    ---------------------------------------------------------------------*/
 
 Require 'Init.php';
+Require 'Mavericks/Modules/RecaptchaLIB.php';
 
 if($users->CheckLogin())
     header("Location: ".PATH."/me");

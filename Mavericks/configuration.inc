@@ -26,6 +26,8 @@ $Mavericks['CONFIG']['SITENAME']    =   "Mavericks Trynity";
 $Mavericks['CONFIG']['SITEPATH']    =   "Auto"; 
 $Mavericks['CONFIG']['CDN']         =   "http://localhost/static";
 $Mavericks['CONFIG']['HASH_TYPE']   =   "Mavericks"; // Normal or Mavericks
+$Mavericks['CONFIG']['HASH_KEY']    =   "SeguridadInternaTrynity"; // Editar :)
+
 $Mavericks['CONFIG']['SERC_UPDATES']=   true; 
 
 $Mavericks['CONFIG']['TPL_DIR']     =   DOCUMENT_ROOT. 'Mavericks' .SEPARATOR. 'Templates' .SEPARATOR;
@@ -33,3 +35,4 @@ $Mavericks['CONFIG']['TPL_CACHE']   =   DOCUMENT_ROOT. 'Mavericks' .SEPARATOR. '
 $Mavericks['CONFIG']['TPL_NAME']    =   "Trynity";
 
 $Mavericks['CONFIG']['APC_CACHE']   =   false;
+$Mavericks['CONFIG']['RECAPTCH_PUB']=   "6LcNWeMSAAAAADxt1YADZfRKlK5AYPIiwR3aYwyn";   

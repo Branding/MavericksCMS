@@ -13,7 +13,6 @@
      * GNU General Public License for more details.
 
    ---------------------------------------------------------------------*/
-
 Require 'Init.php';
 
 if($users->CheckLogin())

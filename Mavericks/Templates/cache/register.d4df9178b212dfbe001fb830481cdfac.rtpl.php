@@ -38,33 +38,95 @@
 			</ul>
 		</div>
 		<div id="content">
-			<h3>¿Que es <?php echo $SITENAME;?>?</h3>
-			<p><?php echo $SITENAME;?> Regístrate gratis y recibe 600.000 mil créditos entra ya!
-			</br>
-			Reserva tu lugar aquí en <b><?php echo $SITENAME;?></b>!
-			</br>
-			</br>
-			<b>1. Regístrate gratis y crea un avatar</b>
-			Sólo tienes que introducir tu dirección de correo electrónico en el siguiente paso y crear el primer personaje <?php echo $SITENAME;?>. No podría ser más sencillo! :)
-			</br>
-			</br>
+			<?PHP 
+				if(is_string($_GET['step']))
+					$Page = $_GET['step'];
 
-			<b>2. Invita a tus amigos y enviales regalos.</b>
-			Entretener a sus amigos mediante la inclusión de la tapa <?php echo $SITENAME;?> ya. ¡Cómo es eso gente feliz!
-			</br>
-			</br>
+				switch($_GET['step']) 
+				{
+					case 'basic':
+						echo '
+							 <h3>¡Registrate en '.$SITENAME.'!</h3>
+							 <p>Rellena el siguiente formulario y podras acceder inmediatamente a '.$SITENAME.', no te tomaras ni 2 minutos :)</p>
+							 <input type="text" id="username" placeholder="Nombre de usuario" style="width:190px">
+							 <input type="password" id="password" placeholder="Contraseña" style="width:190px">
+							 <input type="password" id="password2" placeholder="Repite la contraseña" style="width:190px">
+							 <input type="email" id="email" placeholder="Direccion email" style="width:190px">
+							 <h3>Preguntas de seguridad</h3>
+							 
+							 <label>Preguntas de seguridad numero 1</label></br></br>
+							<select id="Question1">
+							<option value="1">¿Cual era tu mejor amigo de la infancia?</option>
+							<option value="2">¿Cual es el nombre completo de tu madre?</option>
+							<option value="3">¿Cual es el nombre de tu mascota?</option>
+							<option value="4">¿Cual es el nombre de tu hermano mayor?</option>
+							<option value="5">¿Cual era tu comida favorita en la infancia?</option>
+							<option value="6">¿Cual es tu equipo de futbool favorito?</option>
+							<option value="7">¿Cual es tu cantante favorito?</option>
+							</select>
 
-			<b>3. Espere a que comience la diversión!</b>
-			Paciencia pequeño saltamontes. Te llevo hasta el lugar de acción. Mientras tanto, los regalos adicionales aquí, entretenimiento y vuelva a por más.</p>
-		</br>
-		<a class="button buttons-color">Continuar con el registro</a>
-		</br>
-		</br>
+							<br>
+
+							<input type="text" id="Answer1" placeholder="Respuesta de la pregunta" value maxlength="48" style="width:190px"></br>
+
+							<label>Preguntas de seguridad numero 2</label></br></br>
+							<select id="Question2">
+							<option value="1">¿Cual era tu mejor amigo de la infancia?</option>
+							<option value="2">¿Cual es el nombre completo de tu madre?</option>
+							<option value="3">¿Cual es el nombre de tu mascota?</option>
+							<option value="4">¿Cual es el nombre de tu hermano mayor?</option>
+							<option value="5">¿Cual era tu comida favorita en la infancia?</option>
+							<option value="6">¿Cual es tu equipo de futbool favorito?</option>
+							<option value="7">¿Cual es tu cantante favorito?</option>
+							</select>
+
+							</br>
+
+							<input type="text" id="Answer2" placeholder="Respuesta de la pregunta" value maxlength="48" style="width:190px">
+
+							<h3>Codigo de verificacion!</h3>
+
+							'.recaptcha_get_html(Mavericks::LoadconfigwithKey('RECAPTCH_PUB')).'
+
+							</br>
+							</br>
+							<div id="result"></div>
+							<button>Quiero registrarme!</button>
+							</br>
+							';
+					break;
+					
+					default:
+						echo '
+							<h3>¿Que es '.$SITENAME.'?</h3>
+							<p>'.$SITENAME.' Regístrate gratis y recibe 600.000 mil créditos entra ya!
+							</br>
+							Reserva tu lugar aquí en <b>'.$SITENAME.'</b>!
+							</br>
+							</br>
+							<b>1. Regístrate gratis y crea un avatar</b>
+							Sólo tienes que introducir tu dirección de correo electrónico en el siguiente paso y crear el primer personaje '.$SITENAME.'. No podría ser más sencillo! :)
+							</br>
+							</br>
+
+							<b>2. Invita a tus amigos y enviales regalos.</b>
+							Entretener a sus amigos mediante la inclusión de la tapa '.$SITENAME.' ya. ¡Cómo es eso gente feliz!
+							</br>
+							</br>
+
+							<b>3. Espere a que comience la diversión!</b>
+							Paciencia pequeño saltamontes. Te llevo hasta el lugar de acción. Mientras tanto, los regalos adicionales	aquí, entretenimiento y vuelva a por más.</p>
+							</br>
+							<a class="button buttons-color" href="?step=basic">Continuar con el registro</a>
+							</br>
+							</br>';
+						break;
+				}
+			?>
+
 		</div>
 	</div>
 
+	<script type="text/javascript" src="<?php echo $CDN;?>/js/register.js"></script>
 	<div id="footer-image" style="background:url('<?php echo $CDN;?>/images/index/bg_hotel.out.png') 475px 0 no-repeat;"></div>
-	<footer>
-		<div id="copyright"><?php echo $SITENAME;?> 2013 - 2014 &copy; Todos los derechos reservados</div>
-	</footer>
 </body>

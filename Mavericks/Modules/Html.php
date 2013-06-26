@@ -47,6 +47,21 @@ class Html
 
     function __destruct()
     {   
-        echo $this->Buffer_compress()."<!-- MavericksCMS edition: ".Mavericks::Mavericks_version." loaded in ".intval(substr( (microtime() - START) / 100, 2, 5 )." milliseconds -->");
-    }
+        Header("Content-Type:text/html");
+        echo base64_decode('ICAgPCEtLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0t
+        LS0tLS0tLQ0KCSiVX5UpICAgQXV0aG9yOiB8TGlvbg0KCTwpICkmIzk1ODM7IENvcHlyaWdodCAo
+        QykgMjAxMyAtIDIwMTQNCiAJIC8gXCAgICBNYXZlcmlja3NDTVMNCiAgICAgDQogICAgICogVGhp
+        cyBwcm9ncmFtIGlzIHB1YmxpYzogeW91IGNhbiByZWRpc3RyaWJ1dGUgaXQgYW5kL29yIG1vZGlm
+        eQ0KICAgICAqIGl0IHVuZGVyIHRoZSB0ZXJtcyBvZiB0aGUgR05VIEdlbmVyYWwgUHVibGljIExp
+        Y2Vuc2UgYXMgcHVibGlzaGVkIGJ5DQogICAgICogdGhlIEZyZWUgU29mdHdhcmUgRm91bmRhdGlv
+        biwgZWl0aGVyIHZlcnNpb24gMyBvZiB0aGUgTGljZW5zZSwgb3INCiAgICAgKiAoYXQgeW91ciBv
+        cHRpb24pIGFueSBsYXRlciB2ZXJzaW9uLg0KDQogICAgICogVGhpcyBwcm9ncmFtIGlzIGRpc3Ry
+        aWJ1dGVkIGluIHRoZSBob3BlIHRoYXQgaXQgd2lsbCBiZSB1c2VmdWwsDQogICAgICogYnV0IHdp
+        dGhvdXQgYW55IHdhcnJhbnR5IHdpdGhvdXQgZXZlbiB0aGUgaW1wbGllZCB3YXJyYW50eSBvZg0K
+        ICAgICAqIG1lcmNoYW50YWJpbGl0eSBvciBmaXRuZXNzIGZvciBhIHBhcnRpY3VsYXIgcHVycG9z
+        ZS4gU2VlIHRoZQ0KICAgICAqIEdOVSBHZW5lcmFsIFB1YmxpYyBMaWNlbnNlIGZvciBtb3JlIGRl
+        dGFpbHMuDQogICAtLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0t
+        LS0tLS0tLS0tLS0tLS0tLS0tLS0tIC0tPg==').PHP_EOL;
+        echo $this->Buffer_compress()."<!-- MavericksCMS edition: ".Mavericks::Mavericks_version." loaded in ".intval(substr((microtime() - START) / 100, 2, 5)." milliseconds -->");
+    }                                                                                                                                       
 }

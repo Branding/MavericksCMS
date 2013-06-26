@@ -16,9 +16,9 @@
 
 class Database{
     
+    public $DatabaseReady = false;
     private $Configuration = array();
     private $Handler = null;
-    public $DatabaseReady = false;
     private $querybind = "";
     private $querytext;
 
@@ -33,7 +33,6 @@ class Database{
 
     private function Initconnect()
     {
-        
         if($this->Handler == null)
         {
             $this->Handler = new mysqli($this->Configuration['HOST'], $this->Configuration['USER'], $this->Configuration['PASS'], $this->Configuration['DBASE'], $this->Configuration['PORT']);
@@ -86,6 +85,34 @@ class Database{
             else
                 return $Query;
         }
+    }
+
+    public function InsertInto($table, $p = array())
+    {
+        $this->Initconnect();
+         
+        $query = "INSERT INTO " . $table;
+        $part1 = '';
+        $part2 = '';
+
+        foreach($p as $id => $value)
+        {
+            $part1 .= "`" . $id . "`, ";
+            $part2 .= "'" . $this->EscapeString($value) . "', ";
+        }
+
+        $part1 = substr($part1, 0, strlen($part1) - 2);
+        $part2 = substr($part2, 0, strlen($part2) - 2);
+        
+        $query .= " (" . $part1 . ") VALUES (" . $part2 . ");";
+        
+        return $this->Query($query);
+    }
+
+    public function EscapeString($text)
+    {
+        $this->Initconnect();
+        return $this->Handler->escape_string($text);
     }
 
     public function Get_type($param)
