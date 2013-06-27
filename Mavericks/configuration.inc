@@ -34,5 +34,7 @@ $Mavericks['CONFIG']['TPL_DIR']     =   DOCUMENT_ROOT. 'Mavericks' .SEPARATOR. '
 $Mavericks['CONFIG']['TPL_CACHE']   =   DOCUMENT_ROOT. 'Mavericks' .SEPARATOR. 'Templates' .SEPARATOR. 'cache';
 $Mavericks['CONFIG']['TPL_NAME']    =   "Trynity";
 
-$Mavericks['CONFIG']['APC_CACHE']   =   false;
+$Mavericks['CONFIG']['MEM_CACHE']   =   true;
+$Mavericks['CONFIG']['MEM_HOST']    =   "localhost";
+$Mavericks['CONFIG']['MEN_PORT']    =   11211;
 $Mavericks['CONFIG']['RECAPTCH_PUB']=   "6LcNWeMSAAAAADxt1YADZfRKlK5AYPIiwR3aYwyn";   

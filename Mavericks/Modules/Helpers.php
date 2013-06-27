@@ -22,4 +22,12 @@ class Helpers{
 
         return $Handler;
     }
+
+    static function TableExist($table)
+    {
+        global $Database;
+
+        $Query = $Database->Query('SHOW TABLES LIKE "'.$table.'" ');
+        return ($Query->num_rows > 0) ? true : false;
+    }
 }

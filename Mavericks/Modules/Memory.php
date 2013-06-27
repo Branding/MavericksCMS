@@ -15,28 +15,40 @@
    ---------------------------------------------------------------------*/
 class Memory
 {
-	static $Apcstatus = false;
+	static $Memstatus = false;
+	static $Memcached;
 
 	public function __construct()
 	{
-		if(Mavericks::LoadconfigwithKey('APC_CACHE'))
+		if(Mavericks::LoadconfigwithKey('MEM_CACHE'))
 		{
-			self::$Apcstatus = true;
+			self::$Memstatus = true;
+			self::$Memcached = new Memcache();
+
+			/**
+				Init memcached connection!
+			*/
+				self::$Memcached->connect(Mavericks::LoadconfigwithKey('MEM_HOST'), Mavericks::LoadconfigwithKey('MEM_PORT')) or die(Mavericks::Exception('fatal', 'Error con la conexion MEMCACHED'));
 		}
 	}
 
 	static function Add($name, $data)
 	{
-		return (self::$Apcstatus) ? apc_store($name, $data) : '';
+		return (self::$Memstatus) ? self::$Memcached->set($name, $data) : '';
 	}
 
 	static function Delete($name)
 	{
-		return (self::$Apcstatus) ? apc_delete($name) : '';
+		return (self::$Memstatus) ? self::$Memcached->delete($name) : '';
 	}
 
-	static function Get($name)
+	static function Get($varkey)
 	{
-		return (self::$Apcstatus) ? apc_fetch($name) : '';
+		return (self::$Memstatus) ? self::$Memcached->get($varkey) : '';
+	}
+
+	function __destruct()
+	{
+		self::$Memcached->close();
 	}
 }

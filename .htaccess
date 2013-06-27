@@ -1,4 +1,3 @@
-AddType application/x-httpd-php .asp .py .pl
 <ifModule mod_rewrite.c>
 RewriteEngine on
 Options All -Indexes
