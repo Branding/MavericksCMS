@@ -1,0 +1,380 @@
+body{
+	background-color: #e3e3db;
+	font-family: 'Ubuntu', Georgia, serif;
+	color: #333;
+	font-size: 14px;
+	margin: 0;
+}
+
+header{
+	width: 100%;
+	height: 95px;
+	background: rgba(0, 0, 0, 0.86);
+	position: absolute;
+	z-index: 20;
+	border-bottom: 5px solid rgb(2, 167, 230);
+}
+
+header #logo{
+	margin-left: 165px;
+	width: 110px;
+	text-transform: uppercase;
+	font-size: 40px;
+	color: white;
+	height: 40px;
+	font-weight: bold;
+	margin-top:17px;
+}
+
+header #logo_desc{
+	margin-left: 160px;
+	text-transform: uppercase;
+	font-size: 13px;
+	color: white;
+}
+
+header #enter{
+	color: white;
+	margin-top:-35px;
+	float: right;
+	margin-right: 20px;
+}
+
+header #onlines{
+	color: white;
+	float: right;
+	margin-right: 220px;
+	font-size: 16px;
+	text-transform: uppercase;
+	margin-top: -27px;
+}
+
+#wrapper{
+	width: 950px;
+	left: 50%;
+	position: absolute;
+	margin-left: -475px;
+	margin-top: 50px;
+}
+
+#profile{
+	margin-top: 97px;
+	border: 1px solid #000000;
+	border-bottom: 2px solid #000000;
+	color: #000000;
+	text-shadow: 1px 1px 1px #FFFFFF;
+	margin-bottom: 10px;
+	height: 310px;
+	width: 945px;
+}
+
+#profile #front{
+	background-position: center;
+	background-color: #efefef;
+	background-size: 100%;
+	width: 100%;
+	height: 310px;
+}
+
+#front > #bg{
+	background-image: url('http://haddoz.org/static/images/front.png');
+	height: 310px;
+	width: 945px;
+	position: absolute;
+}
+
+#image-profile {
+	width: 110px;
+	height: 110px;
+	position: absolute;
+	margin-top: 185px;
+	margin-left: 75px;
+	background-color: rgba(255, 255, 255, .25);
+	border: 1px solid #000;
+	border-color: rgba(0, 0, 0, .25);
+	box-shadow: 0px 0px 6px #858585;
+}
+
+#info-front {
+	position: absolute;
+	margin-top: 215px;
+	margin-left: 200px;
+	font-size: 22px;
+	color: #FFF;
+	text-shadow: 1px 1px 2px rgba(0, 0, 0, .9);
+}
+
+#info-front span{
+	font-size: 14px;
+}
+
+#info span{
+	margin-right: 10px;
+}
+
+#column1{
+	width: 302px;
+	float: left;
+}
+
+#column2{
+	margin-left: 8px;
+	width: 640px;
+	float: left;
+}
+
+#footer-image{
+	height: 100%;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	display: block;
+	position: absolute;
+	top: 0;
+}
+
+#box{
+	width: 100%;
+	padding: 2px;
+	color: #6a7480;
+	margin-bottom: 10px;
+}
+
+#box #title{
+	background: #f6f7f8;
+	color: #6a7480;
+	padding: 10px;
+	margin-top: -15px;
+	margin-left: -15px;
+	width: 280px;
+	border-bottom: 1px solid #cacaca;
+	margin-bottom: 8px;
+}
+
+#column2 #box #title{
+	background: #f6f7f8;
+	color: #6a7480;
+	padding: 10px;
+	margin-top: -15px;
+	margin-left: -15px;
+	width: 618px;
+	border-bottom: 1px solid #cacaca;
+	margin-bottom: 8px;
+}
+
+.space{
+	min-height: 20px;
+	padding: 15px;
+	background-color: #efefef;
+	border: 1px solid black;
+}
+
+#navigation {
+	border-top: 1px solid #000000;
+	padding: 8px;
+	background: rgb(53, 53, 47);
+	float: left;
+	width: 622px;
+	margin-top: 49px;
+	border-left: 1px solid #000000;
+	border-bottom: 1px solid #000000;
+	border-right: 1px solid #000000;
+	-webkit-box-shadow: inset 0px 1px 0 #86867d;
+	-moz-box-shadow: inset 0px 1px 0 #86867d;
+	box-shadow: inset 0px 1px 0 #86867d;
+
+}
+	
+#navigation a {
+	padding: 5px;
+	border-right: 1px solid #626262;
+	color: #FFFFFF;
+	text-shadow: 1px 1px 1px #000000;
+	text-decoration: none;
+}
+
+#search {
+	float: left;
+	margin-left: 5px;
+	margin-top: 55px;
+}
+	
+#search input {
+	border: 1px solid #828282;
+	border-bottom: 2px solid #828282;
+	background: url(http://resources-img.pixeledhotel.us/images/lupa.png);
+	padding: 5px;
+	width: 290px;
+	color: #8f8f8f;
+	text-shadow: 1px 1px 1px #FFFFFF;
+	font-family: Trebuchet MS;
+	font-size: 14px;
+}
+
+#search input:focus {
+	outline:0px;
+	border-color:rgba(82,168,236,0.8);
+	-webkit-box-shadow:inset 0 1px 3px rgba(0,0,0,0.1),0 0 8px rgba(82,168,236,0.6);
+	-moz-box-shadow:inset 0 1px 3px rgba(0,0,0,0.1),0 0 8px rgba(82,168,236,0.6);
+	box-shadow:inset 0 1px 3px rgba(0,0,0,0.1),0 0 8px rgba(82,168,236,0.6);
+}
+
+
+#rooms {
+	overflow:hidden;
+}
+	
+#room1 {
+	background: url(http://resources-img.pixeledhotel.us/images/room_1.png) no-repeat;
+	padding-left:40px;
+	height:40px;
+	float:left;
+	width:250px;
+	font-size: 12px;
+}
+	
+#room2 {
+	background: url(http://resources-img.pixeledhotel.us/images/room_2.png) no-repeat;
+	padding-left:40px;
+	height:40px;
+	float:left;
+	width:250px;
+	font-size: 12px;
+}
+
+#enter-hk {
+	background: #febf01; /* Old browsers */
+	background: -moz-linear-gradient(top, #febf01 0%, #ff9a02 68%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#febf01), color-stop(68%,#ff9a02)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, #febf01 0%,#ff9a02 68%);
+	background: -o-linear-gradient(top, #febf01 0%,#ff9a02 68%);
+	background: -ms-linear-gradient(top, #febf01 0%,#ff9a02 68%);
+	background: linear-gradient(to bottom, #febf01 0%,#ff9a02 68%); 
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#febf01', endColorstr='#ff9a02',GradientType=0 ); /* IE6-9 */
+	position: absolute;
+	margin-left: 350px;
+	margin-top: 30px;
+	padding: 20px;
+	padding-left: 40px;
+	padding-right: 40px;
+	text-align: center;
+	color: #FFFFFF;
+	font-weight: bold;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	text-decoration: none;
+	border-radius: 5px;
+	border-left: 1px solid rgb(233, 175, 53);
+	border-right: 1px solid rgb(233, 175, 53);
+	border-top: 1px solid rgb(233, 175, 53);
+	border-bottom: 2px solid rgb(233, 175, 53);
+	-webkit-box-shadow: inset 0px 1px 0 #88d829;
+	-moz-box-shadow: inset 0px 1px 0 #88d829;
+	box-shadow: inset 0px 1px 0 #88d829;
+}
+	
+#room3 {
+	background: url(http://resources-img.pixeledhotel.us/images/room_3.png) no-repeat;
+	padding-left:40px;
+	height:40px;
+	float:left;
+	width:250px;
+	font-size: 12px;
+}
+	
+#room1 em, #room2 em, #room3 em {
+	color: #bebebe;
+	text-shadow: 0px 1px 0px #FFFFFF;
+}
+
+#stats {
+	margin-left: 170px;
+	margin-top: 30px;
+	position: absolute;
+	margin-right: 10px;
+	text-align: center;
+	font-size: 12px;
+}
+
+#newspromo #topstories {
+	position: relative;
+	height: 187px;
+}
+
+#newspromo .topstory {
+	background: transparent none no-repeat;
+	background-color: #D8D9CE;
+	color: #fff;
+	height: 177px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	padding: 5px 14px;
+}
+
+#newspromo .topstory a {
+	color: #fff;
+}
+
+#newspromo .topstory h4 {
+	margin: 0 0 3px 0;
+	padding: 0;
+	font-weight: normal;
+	text-transform: uppercase;
+	font-size: 11px;
+}
+
+#newspromo .topstory h3 {
+	margin: 0 0 10px 0;
+	padding: 0;
+	font-size: 18px;
+}
+
+#newspromo .topstory h3 a {
+	text-decoration: none;
+}
+
+#newspromo .topstory h3 a:hover {
+	text-decoration: underline;
+}
+
+#newspromo .topstory p.summary {
+	width: 70%;
+}
+
+#newspromo .newsitem-date {
+	color: #888;
+	font-size: 10px;
+	margin-top: 2px;
+}
+
+#newspromo li.odd a, #newspromo li.even a {
+	color: #333;
+	text-decoration: none;
+}
+
+#newspromo li.odd a:hover, #newspromo li.even a:hover {
+	text-decoration: underline;
+}
+
+#newspromo li.last {
+	text-align: right;
+}
+
+
+footer{
+	width: 100%;
+	height: 45px;
+	border-top: 5px solid rgb(2, 167, 230);
+	background: black;
+	position: fixed;
+	text-transform: uppercase;
+	bottom: 0;
+}
+
+footer #copyright{
+	color: white;
+	font-size: 16px;
+	margin-top: 10px;
+	text-align: center;
+}

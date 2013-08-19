@@ -1,22 +1,28 @@
 <?PHP
 /**-------------- Copyright (C) 2013 - Mavericks Trynity -------------------------
-	
-	 * Author: |Lion - All rights reserved.
-     * This program is public: you can redistribute it and/or modify
-     * it under the terms of the GNU General Public License as published by
-     * the Free Software Foundation, either version 3 of the License, or
-     * (at your option) any later version.
+    
+     * ###      ###    ####  ##           ## ######### ########   ##  ###### ########
+     * ## #    # ##  ##    ## ##         ##  ##        ##    ##   ##  ##     ##
+     * ##  #  #  ##  ##    ##  ##       ##   ##        ########   ##  ##      ##
+     * ##   ##   ##  ##    ##   ##     ##    ########  ##         ##  ##        ##
+     * ##        ##  ########    ##   ##     ##        ###        ##  ##          ##
+     * ##        ##  ##    ##     ## ##      ##        ##  ##     ##  ##           ##
+     * ##        ##  ##    ##      ##        ######### ##     ##  ##  ###### #######
 
-     * This program is distributed in the hope that it will be useful,
-     * but without any warranty without even the implied warranty of
-     * merchantability or fitness for a particular purpose. See the
-     * GNU General Public License for more details.
+     * Author: |Lion (Kevin) - All rights reserved.
+     * This program is private: you can not redistribute it and/or modify
 
-   ---------------------------------------------------------------------*/
-Define('::MAVERICKS::', 1);
-Require '../Init.php';
+   ----------------------------------------------------------------------*/
 
-if($_POST > 0)
-	$users->NewUser($_POST['username'], $_POST['password'], $_POST['password2']);
+    Require '../Init.php';
+
+header('Content-type: application/json');
+define('PROTECT_POST', true);
+
+if( count($_POST) > 0 && Mavericks::is_ajax() )
+	$users->_NewUser($_POST['username'],  $_POST['password'],  $_POST['password2'], 
+                     $_POST['email'],     $_POST['Question1'], $_POST['Answer1'], 
+                     $_POST['Question2'], $_POST['Answer2'],   $_POST['recaptcha_challenge_field'], 
+                     $_POST['recaptcha_response_field']);
 else
 	Header("Location: " . PATH . "/register");

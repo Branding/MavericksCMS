@@ -1,18 +1,19 @@
 <?PHP
 /**-------------- Copyright (C) 2013 - Mavericks Trynity -------------------------
-	
-	 * Author: |Lion - All rights reserved.
-     * This program is public: you can redistribute it and/or modify
-     * it under the terms of the GNU General Public License as published by
-     * the Free Software Foundation, either version 3 of the License, or
-     * (at your option) any later version.
+    
 
-     * This program is distributed in the hope that it will be useful,
-     * but without any warranty without even the implied warranty of
-     * merchantability or fitness for a particular purpose. See the
-     * GNU General Public License for more details.
+     | ###      ###    ####  ##           ## ######### ########   ##  ###### ########
+     | ## #    # ##  ##    ## ##         ##  ##        ##    ##   ##  ##     ##
+     | ##  #  #  ##  ##    ##  ##       ##   ##        ########   ##  ##      ##
+     | ##   ##   ##  ##    ##   ##     ##    ########  ##         ##  ##        ##
+     | ##        ##  ########    ##   ##     ##        ###        ##  ##          ##
+     | ##        ##  ##    ##     ## ##      ##        ##  ##     ##  ##           ##
+     | ##        ##  ##    ##      ##        ######### ##     ##  ##  ###### #######
 
-   ---------------------------------------------------------------------*/
+     * Author: |Lion (Kevin) - All rights reserved.
+     * This program is private: you can not redistribute it and/or modify
+
+   ----------------------------------------------------------------------*/
 
 class Database{
     
@@ -84,6 +85,7 @@ class Database{
                 Mavericks::Exception('fatal', 'Ocurrio un error a realizar una query, la query es: '.$this->querytext);
             else
                 return $Query;
+                $this->Kill();
         }
     }
 
@@ -125,6 +127,12 @@ class Database{
             
         if( is_string( $param ) )
             return 's';
+    }
+
+    private function Kill()
+    {
+        $this->Handler->close();
+        $this->Handler = null;
     }
 
 }

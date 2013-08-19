@@ -13,21 +13,5 @@
      * GNU General Public License for more details.
 
    ---------------------------------------------------------------------*/
-class Helpers{
-    static function WriteInLogs($text)
-    {
-        $Handler = fopen(DOCUMENT_ROOT. 'Mavericks'. SEPARATOR . 'Logs' . SEPARATOR. 'error.log', "a");
-        fwrite($Handler, $text);
-        fclose($Handler);
 
-        return $Handler;
-    }
-
-    static function TableExist($table)
-    {
-        global $Database;
-
-        $Query = $Database->Query('SHOW TABLES LIKE "'.$table.'" ');
-        return ($Query->num_rows > 0) ? true : false;
-    }
-}
+Require '../../../Init.php';

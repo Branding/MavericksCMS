@@ -45,7 +45,7 @@ class RainTPL{
 		 *
 		 * @var string
 		 */
-		static $tpl_ext = "tpl";
+		static $tpl_ext = "html";
 
 
 		/**

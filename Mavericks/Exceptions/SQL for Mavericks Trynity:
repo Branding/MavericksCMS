@@ -1,0 +1,11 @@
+SQL for Mavericks Trynity:
+
+CREATE TABLE IF NOT EXISTS `SafetyQuestions` (
+  `username` varchar(14) NOT NULL,
+  `question_one` enum('1','2','3','4','5','6','7') NOT NULL,
+  `answer_one` text NOT NULL,
+  `question_two` enum('1','2','3','4','5','6','7') NOT NULL,
+  `answer_two` text NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+ALTER TABLE  `users` ADD  `Login_tocken` VARCHAR( 110 ) NOT NULL AFTER  `password`
